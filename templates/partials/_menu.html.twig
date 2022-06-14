@@ -1,0 +1,90 @@
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+	<a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ path('accueil') }}">Jardinier</a>
+	<button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="navbar-nav">
+		<div class="nav-item text-nowrap">
+			<a class="nav-link px-3" style="display: inline" href="{{ path('app_profile') }}">
+				<input style="display: inline" type="image" src="{{ asset('images/admin/profile.png') }}" width="30px" height="auto">
+			</a>
+			<a style="display: inline" class="nav-link px-3" href="{{ path('deconnection') }}">
+				<input style="display: inline" type="image" src="{{ asset('images/admin/deconnection.png') }}" width="30px" height="auto">
+			</a>
+		</div>
+	</div>
+</header>
+
+<div class="container-fluid">
+	<div class="row">
+		<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+			<div class="position-sticky pt-3">
+				<ul class="nav flex-column">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="{{ path('accueil') }}">
+							<span data-feather="home"></span>
+							Accueil
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#devis" aria-expanded="false">
+							<span data-feather="file"></span>
+							Devis
+						</a>
+						<div class="collapse" id="devis">
+							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+								<li>
+									<a href="{{ path("mesure") }}" class="nav-link">Obtenir un devis</a>
+								</li>
+								<li>
+									<a href="{{ path("app_liste_devis") }}" class="nav-link">Voir mes devis</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#haies" aria-expanded="false">
+							<span data-feather="sun"></span>
+							Haies
+						</a>
+						<div class="collapse" id="haies">
+							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+								<li>
+									<a href="{{ path("app_creation_haie") }}" class="nav-link">Créé haie</a>
+								</li>
+								<li>
+									<a href="{{ path("app_liste_haie") }}" class="nav-link">Voir les haies</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#categories" aria-expanded="false">
+							<span data-feather="tag"></span>
+							Catégories
+						</a>
+						<div class="collapse" id="categories">
+							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+								<li>
+									<a href="{{ path("app_creation_categorie") }}" class="nav-link">Créé catégorie</a>
+								</li>
+								<li>
+									<a href="{{ path("app_liste_categorie") }}" class="nav-link">Voir les catégories</a>
+								</li>
+							</ul>
+						</div>
+
+						<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="{{ path('app_liste_clients') }}">
+							<span data-feather="user"></span>
+							Clients
+						</a>
+					</li>
+
+					</li>
+				</li>
+			</ul>
+		</div>
+	</nav>

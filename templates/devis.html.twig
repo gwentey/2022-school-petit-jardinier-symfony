@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis
+{% endblock %}
+
+{% block body %}
+
+
+	<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+			<h1 class="h2">Devis</h1>
+			<div class="btn-toolbar mb-2 mb-md-0"></div>
+		</div>
+
+		<div class="invoice-box">
+			<table cellpadding="0" cellspacing="0">
+				<tr class="top">
+					<td colspan="4">
+						<table>
+							<tr>
+								<td class="title">
+									<img src="{{ asset('images/admin/jardinier.png') }}" style="width:100%; max-width:300px;">
+								</td>
+
+								<td>
+									Crée le : {{ devis.date|date("d/m/Y", "Europe/Paris") }}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="information">
+					<td colspan="4">
+						<table>
+							<tr>
+								<td>
+									Jardinier, Inc.<br>
+									Rue de la Jardinierie<br>
+									JardinCity, CP 12345
+								</td>
+
+
+								<td>
+									Vous êtes un{% if choix == "entreprise" %}e{% endif %}<br>
+									{% if choix == "entreprise" %}
+										Entreprise
+										<br>
+										Remise : 10%
+									{% else %}
+										Particulier
+									{% endif %}<br>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="heading">
+					<td>Type</td>
+					<td>Prix unitaire</td>
+					<td>Longueur</td>
+					<td>Hauteur</td>
+					<td></td>
+
+				</tr>
+				{% for tailler in taillers %}
+				<tr class="item">
+					<td>{{ tailler.haie.nom }}</td>
+  					<td>{{ tailler.haie.prix|format_currency('EUR', locale='fr') }}</td>
+					<td>{{ tailler.Longueur }}
+						cm</td>
+					<td>{{ tailler.Hauteur }}
+						cm</td> 
+					<td>
+					<a href="{{ path("app_suppression_tailler_devis", {'id': tailler.id })}}">
+					<input type="image" width="30" src="{{ asset("images/admin/suprimee.webp") }}"></td> 
+					</a>
+				</tr> 
+				{% endfor %}
+
+
+				<tr class="total">
+					<td colspan="3"></td>
+					<td>Total:
+						{{ total|format_currency('EUR', locale='fr')}}</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<div align="center">
+			<a href="{{ path('app_liste_devis') }}" style="text-decoration: none;">
+				<input type="image" src="{{ asset('images/admin/retour.png') }}" width="30px" height="auto">
+			</a>
+			<a href="{{ path('mesure_add', {'id': devis.id}) }}" style="text-decoration: none;">
+				<input type="image" src="{{ asset('images/admin/add.webp') }}" width="30px" height="auto">
+			</a>
+		</div>
+	</main>
+</div></div>{% endblock %}

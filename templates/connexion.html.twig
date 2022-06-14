@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion
+{% endblock %}
+
+{% block body %}
+	<div class="position-absolute top-50 start-50 translate-middle">
+		<div class="card">
+			<div class="card-body">
+				<img src="{{ asset('images/admin/jardinier.png') }}" width="300px" style="margin: 15px">
+		{% for message in app.flashes('notification') %}
+			<div class="alert alert-success alert-dismissible fade show">
+				{{ message }}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		{% endfor %}
+				<div class="container">
+					<form action="{{ path('connexion') }}" method="post">
+
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" name="_username" id="username" placeholder="Votre identifiant" value=""/>
+							<label for="username">Identifiant</label>
+
+						</div>
+						<div class="form-floating">
+							<input type="password" class="form-control" name="_password" id="password" placeholder="Votre mot de passe"/>
+							<label for="password">Mot de passe</label>
+						</div>
+						<br/>
+						<div align="center">
+							<button type="submit" class="btn btn-secondary btn-lg">Se connecter</button>
+							<a href="{{ path("inscription")}}">
+								<button type="button" class="btn btn-secondary btn-lg">S'inscrire</button>
+							</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div
+			align="center">
+			{# 			<a href="{{path('accueil')}}">
+			 #}
+			<input
+			type="image" src="{{ asset('images/admin/retour.png') }}" width="50px" height="auto">
+		{# 			</a>
+		 #}
+		</div>
+	</div>
+</div>{% endblock %}

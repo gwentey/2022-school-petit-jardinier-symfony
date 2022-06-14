@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crée
+{% endblock %}
+
+{% block body %}
+
+
+	<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4  mt-3">
+		{% for message in app.flashes('notification') %}
+			<div class="alert alert-danger alert-dismissible fade show">
+				{{ message }}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		{% endfor %}
+		<form class="needs-validation" action="{{ path('app_profile_modif', {'id': utilisateur.id }) }}" method="post" novalidate>
+
+			<div
+				class="container" style="margin-top: 1em;">
+				<!-- Sign up form -->
+				<form>
+					<!-- Sign up card -->
+					<div class="card person-card">
+						<div
+							class="card-body">
+							<!-- Sex image -->
+							<img id="img_sex" class="person-img" src="https://visualpharm.com/assets/217/Life%20Cycle-595b40b75ba036ed117d9ef0.svg">
+							<h2 id="who_message" class="card-title">Votre profil</h2>
+							<!-- First row (on medium screen) -->
+							<div class="row">
+								<div class="form-group col-md-2">
+									<select name="typeclient" class="form-control" required>
+										<option value="">- Choisir Type ? -</option>
+										{% if utilisateur.getTypeClient == "entreprise" %}
+											<option value="particulier">Particulier</option>
+											<option selected value="entreprise">Entreprise</option>
+
+										{% elseif utilisateur.getTypeClient == "particulier" %}
+											<option selected value="particulier">Particulier</option>
+											<option value="entreprise">Entreprise</option>
+										{% else %}
+											<option value="entreprise">Entreprise</option>
+											<option value="particulier">Particulier</option>
+
+										{% endif %}
+									</select>
+									<div class="invalid-feedback"></div>
+
+								</div>
+								<div class="form-group col-md-5">
+									<input name="prenom" value="{{ utilisateur.prenom }}" type="text" class="form-control" placeholder="Saisir votre prenom" >
+									<div class="invalid-feedback"></div>
+								</div>
+								<div class="form-group col-md-5">
+									<input name="nom" id="nom" value="{{ utilisateur.nom }}" type="text" class="form-control" placeholder="Saisir votre nom" >
+									<div class="invalid-feedback"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12" style="padding=0.5em;">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title">Lieu</h2>
+									<div class="form-group">
+										<label for="adresse" class="col-form-label">Adresse</label>
+										<input type="text" value="{{ utilisateur.adresse }}"  name="adresse" class="form-control" id="adresse" placeholder="Saisir votre adresse" >
+										<div class="invalid-feedback"></div>
+									</div>
+									<div class="form-group">
+										<label for="ville" class="col-form-label">Ville</label>
+										<input type="text" value="{{ utilisateur.ville }}" class="form-control" name="ville" id="ville" placeholder="Saisir votre ville" >
+										<div class="invalid-feedback"></div>
+									</div>
+									<div class="form-group">
+										<label for="cp" class="col-form-label">Code Postal</label>
+										<input type="text" value="{{ utilisateur.cp }}" class="form-control" name="cp" id="cp" placeholder="Saisir code postal" pattern="[0-9]{5}" >
+										<div class="invalid-feedback"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+					<div style="margin-top: 1em;">
+						<button type="submit" class="btn btn-primary btn-lg btn-block">Mettre à jour</button>
+					</div>
+				</form>
+			</div>
+
+		</form>
+
+	</main>
+</div></div>{% endblock %}
