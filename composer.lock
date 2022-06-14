@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "491e27d3db425d3ec3fc5cd12cf99cae",
+    "content-hash": "fa55be2866bd46fad1fa8a2d2cdec239",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4062,16 +4062,16 @@
         },
         {
             "name": "symfony/intl",
-            "version": "v6.0.1",
+            "version": "v6.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
-                "reference": "e06b5a14dbfa04d7afce28a86129bc370a229b2a"
+                "reference": "2ef7cb9af5ad4c3e2d7674326982366ad9dfef86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/e06b5a14dbfa04d7afce28a86129bc370a229b2a",
-                "reference": "e06b5a14dbfa04d7afce28a86129bc370a229b2a",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/2ef7cb9af5ad4c3e2d7674326982366ad9dfef86",
+                "reference": "2ef7cb9af5ad4c3e2d7674326982366ad9dfef86",
                 "shasum": ""
             },
             "require": {
@@ -4122,7 +4122,7 @@
                 "localization"
             ],
             "support": {
-                "source": "https://github.com/symfony/intl/tree/v6.0.1"
+                "source": "https://github.com/symfony/intl/tree/v6.0.8"
             },
             "funding": [
                 {
@@ -4138,7 +4138,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-08T15:13:44+00:00"
+            "time": "2022-04-12T16:11:42+00:00"
         },
         {
             "name": "symfony/mailer",
@@ -7188,7 +7188,7 @@
         },
         {
             "name": "twig/extra-bundle",
-            "version": "v3.3.8",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/twig-extra-bundle.git",
@@ -7251,7 +7251,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.3.8"
+                "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.4.0"
             },
             "funding": [
                 {
@@ -7267,7 +7267,7 @@
         },
         {
             "name": "twig/intl-extra",
-            "version": "v3.3.5",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/intl-extra.git",
@@ -7320,7 +7320,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/twigphp/intl-extra/tree/v3.3.5"
+                "source": "https://github.com/twigphp/intl-extra/tree/v3.4.0"
             },
             "funding": [
                 {
@@ -9818,5 +9818,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
